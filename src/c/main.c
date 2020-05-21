@@ -29,9 +29,9 @@ char
   freetextstring[16];
 
   FFont* time_font;
-#ifndef PBL_PLATFORM_APLITE
-  FFont* info_font;
-#endif
+  #ifndef PBL_PLATFORM_APLITE
+    FFont* info_font;
+  #endif
 
 static Window * s_window;
 
@@ -39,12 +39,12 @@ static Layer * s_picture_bitmap_layer;
 static Layer * s_canvas_bt_icon;
 static Layer * s_canvas_qt_icon;
   Layer * time_area_layer;
-#ifndef PBL_PLATFORM_APLITE
-  Layer * info_area_layer;
-  Layer * text_area_layer;
-#else
-  static Layer * aplite_info_layer;
-#endif
+  #ifndef PBL_PLATFORM_APLITE
+    Layer * info_area_layer;
+    Layer * text_area_layer;
+  #else
+    static Layer * aplite_info_layer;
+  #endif
 
 static GBitmap *s_background_picture;
 
@@ -87,13 +87,6 @@ bool IsInvertedNow=false;
 //////End Configuration///
 ///////////////////////////
 
-static void quiet_time_icon () {
-  if(quiet_time_is_active()) {
-  layer_set_hidden(s_canvas_qt_icon,false);
-} else {
-  layer_set_hidden(s_canvas_qt_icon,true);
-}
-}
 
 static GColor ColorSelect(GColor ColorDay, GColor ColorNight){
   if (settings.NightTheme && IsNightNow && GPSOn ){
@@ -115,6 +108,14 @@ void request_watchjs(){
   dict_write_uint8(iter, 0, 0);
   // Send the message!
   app_message_outbox_send();
+}
+
+static void quiet_time_icon () {
+  if(quiet_time_is_active()) {
+  layer_set_hidden(s_canvas_qt_icon,false);
+} else {
+  layer_set_hidden(s_canvas_qt_icon,true);
+}
 }
 
 ///BT Connection
@@ -617,7 +618,8 @@ static void prv_inbox_received_handler(DictionaryIterator * iter, void * context
 #ifndef PBL_PLATFORM_APLITE
   layer_mark_dirty(info_area_layer);
   layer_mark_dirty(text_area_layer);
-#else
+  #endif
+  #ifdef PBL_PLATFORM_APLITE
   layer_mark_dirty(aplite_info_layer);
 #endif
   // Save the new settings to persistent storage
@@ -646,8 +648,9 @@ static void window_load(Window * window){
  text_area_layer = layer_create(bounds4);
      layer_add_child(window_layer, text_area_layer);
      layer_set_update_proc(text_area_layer, update_text_area_layer);
+#endif
 
-#else
+#ifdef PBL_PLATFORM_APLITE
 
    aplite_info_layer = layer_create(bounds4);
      layer_set_update_proc(aplite_info_layer, layer_update_proc_aplite_info);
@@ -670,12 +673,13 @@ static void window_unload(Window * window){
   layer_destroy (s_picture_bitmap_layer);
   gbitmap_destroy(s_background_picture);
   layer_destroy(time_area_layer);
-#ifndef PBL_PLATFORM_APLITE
-  layer_destroy(info_area_layer);
-  layer_destroy(text_area_layer);
-#else
-  layer_destroy(aplite_info_layer);
-#endif
+  #ifndef PBL_PLATFORM_APLITE
+    layer_destroy(info_area_layer);
+    layer_destroy(text_area_layer);
+  #endif
+  #ifdef PBL_PLATFORM_APLITE
+    layer_destroy(aplite_info_layer);
+  #endif
   layer_destroy(s_canvas_bt_icon);
   layer_destroy(s_canvas_qt_icon);
   window_destroy(s_window);
@@ -684,9 +688,9 @@ static void window_unload(Window * window){
 //  fonts_unload_custom_font(FontIcon3);
 //  fonts_unload_custom_font(FontWeatherIcons);
   ffont_destroy(time_font);
-#ifndef PBL_PLATFORM_APLITE
-  ffont_destroy(info_font);
-#endif
+  #ifndef PBL_PLATFORM_APLITE
+    ffont_destroy(info_font);
+  #endif
 }
 
 void main_window_push(){
@@ -705,13 +709,15 @@ void main_window_update(int hours, int minutes, int month, int day){
   s_day = day;
   s_month = month;
 
+  layer_mark_dirty(s_picture_bitmap_layer);
   layer_mark_dirty(s_canvas_bt_icon);
   layer_mark_dirty(s_canvas_qt_icon);
   layer_mark_dirty(time_area_layer);
     #ifndef PBL_PLATFORM_APLITE
       layer_mark_dirty(info_area_layer);
-    //  layer_mark_dirty(text_area_layer);
-    #else
+      layer_mark_dirty(text_area_layer);
+      #endif
+      #ifdef PBL_PLATFORM_APLITE
   //    #else
       layer_mark_dirty(aplite_info_layer);
     #endif
@@ -752,12 +758,13 @@ static void tick_handler(struct tm * time_now, TimeUnits changed){
     layer_mark_dirty(s_canvas_bt_icon);
     layer_mark_dirty(s_canvas_qt_icon);
     layer_mark_dirty(time_area_layer);
-#ifndef PBL_PLATFORM_APLITE
-    layer_mark_dirty(info_area_layer);
-    layer_mark_dirty(text_area_layer);
-#else
-    layer_mark_dirty(aplite_info_layer);
-#endif
+    #ifndef PBL_PLATFORM_APLITE
+        layer_mark_dirty(info_area_layer);
+        layer_mark_dirty(text_area_layer);
+    #endif
+    #ifdef PBL_PLATFORM_APLITE
+        layer_mark_dirty(aplite_info_layer);
+    #endif
   }
   // Get weather update every requested minutes and extra request 5 minutes earlier
   if (s_countdown == 0 || s_countdown == 5){
@@ -795,9 +802,9 @@ static void init(){
   // Load Resources (fonts & picutures)
   update_background_picture();
   time_font = ffont_create_from_resource(RESOURCE_ID_FONT_DINCONBOLD);
-#ifndef PBL_PLATFORM_APLITE
-  info_font = ffont_create_from_resource(RESOURCE_ID_FONT_DINBOLD);
-#endif
+  #ifndef PBL_PLATFORM_APLITE
+    info_font = ffont_create_from_resource(RESOURCE_ID_FONT_DINBOLD);
+  #endif
   FontDate = fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD);
   //FontDate2 = fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD);
   //FontBattery= fonts_get_system_font(FONT_KEY_GOTHIC_14);
