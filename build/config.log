@@ -1,0 +1,58 @@
+# project  configured on Thu May 21 12:17:44 2020 by
+# waf 1.7.11 (abi 98, python 2070ff0 on linux2)
+# using /home/astosia/.pebble-sdk/SDKs/current/sdk-core/pebble/waf configure
+#
+----------------------------------------
+Setting top to
+/home/astosia/pebble-dev/pebble-sdk-4.5-linux64/Rehoboam
+----------------------------------------
+Setting out to
+/home/astosia/pebble-dev/pebble-sdk-4.5-linux64/Rehoboam/build
+----------------------------------------
+Checking for program webpack
+/home/astosia/.pebble-sdk/SDKs/current/node_modules/.bin/webpack
+find program=['webpack'] paths=['/home/astosia/.pebble-sdk/SDKs/current/node_modules/.bin'] var='WEBPACK' -> '/home/astosia/.pebble-sdk/SDKs/current/node_modules/.bin/webpack'
+----------------------------------------
+Found Pebble SDK for diorite in:
+/home/astosia/.pebble-sdk/SDKs/current/sdk-core/pebble/diorite
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
+----------------------------------------
+Found Pebble SDK for chalk in:
+/home/astosia/.pebble-sdk/SDKs/current/sdk-core/pebble/chalk
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
+----------------------------------------
+Found Pebble SDK for basalt in:
+/home/astosia/.pebble-sdk/SDKs/current/sdk-core/pebble/basalt
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
+----------------------------------------
+Found Pebble SDK for aplite in:
+/home/astosia/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'

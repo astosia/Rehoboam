@@ -1,0 +1,180 @@
+{
+    "author": "astosia",
+    "dependencies": {
+        "pebble-clay": "^1.0.4",
+        "pebble-fctx": "^1.5.0",
+        "pebble-fctx-compiler": "^1.2.2"
+    },
+    "keywords": [],
+    "name": "Rehoboam",
+    "pebble": {
+        "capabilities": [
+            "location",
+            "configurable",
+            "health"
+        ],
+        "displayName": "Rehoboam",
+        "enableMultiJS": true,
+        "messageKeys": [
+            "Back1Color",
+            "Back1ColorN",
+            "Back2Color",
+            "Back2ColorN",
+            "Text1Color",
+            "Text1ColorN",
+            "Text2Color",
+            "Text2ColorN",
+            "FrameColor",
+            "FrameColorN",
+            "WeatherCond",
+            "WeatherTemp",
+            "HourSunrise",
+            "HourSunset",
+            "NameLocation",
+            "UpSlider",
+            "NightTheme",
+            "APIKEY_User",
+            "WeatherUnit",
+            "WeatherProv",
+            "EmailPMKEY",
+            "PINPMKEY",
+            "HourColor",
+            "HourColorN",
+            "MinColor",
+            "MinColorN",
+            "WeatherWind",
+            "bluetoothvibe",
+            "WEATHER_SUNSET_KEY",
+            "Text3Color",
+            "Text3ColorN",
+            "IconNow",
+            "IconFore",
+            "TempFore",
+            "WindFore",
+            "TempForeLow",
+            "Text4Color",
+            "Text4ColorN",
+            "WindIconNow",
+            "WindIconAve",
+            "Text5Color",
+            "Text5ColorN",
+            "WindUnit",
+            "RightLeft",
+            "Rotate",
+            "Invert",
+            "InvertNight",
+            "Freetext",
+            "MoonPhase",
+            "WEATHER_SUNRISE_KEY",
+            "FrameColor1",
+            "FrameColor2",
+            "FrameColor1N",
+            "FrameColor2N",
+            "SideColor1",
+            "SideColor1N",
+            "SideColor2",
+            "SideColor2N",
+            "Text6Color",
+            "Text6ColorN"
+        ],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/Background5.png",
+                    "name": "IMAGE_BACKGROUND",
+                    "type": "png"
+                },
+                {
+                    "file": "images/Backgroundinverted5.png",
+                    "name": "IMAGE_BACKGROUNDINV",
+                    "type": "png"
+                },
+                {
+                    "file": "fonts/Dripicons",
+                    "name": "FONT_DRIPICONS_18",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "fonts/Dripicons",
+                    "name": "FONT_DRIPICONS_16",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "fonts/Weathericons",
+                    "name": "FONT_WEATHERICONS_20",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "fonts/Weathericons",
+                    "name": "FONT_WEATHERICONS_16",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "fonts/Weathericons",
+                    "name": "FONT_WEATHERICONS_12",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "images/Sunset2",
+                    "name": "IMAGE_SUNSET_ICON2",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/sunset",
+                    "name": "IMAGE_SUNSET_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bt-icon",
+                    "name": "IMAGE_BT_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "data/STEELFISH BIG",
+                    "name": "FONT_STEELFISH",
+                    "targetPlatforms": null,
+                    "type": "raw"
+                },
+                {
+                    "file": "data/Open sans ffont",
+                    "name": "OPENSANSCON_FFONT",
+                    "targetPlatforms": null,
+                    "type": "raw"
+                },
+                {
+                    "file": "data/DINPro-Bold",
+                    "name": "FONT_DINBOLD",
+                    "targetPlatforms": null,
+                    "type": "raw"
+                },
+                {
+                    "file": "data/DINPro-CondensedMedium",
+                    "name": "FONT_DINCONBOLD",
+                    "targetPlatforms": null,
+                    "type": "raw"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "ae893b61-48b6-46c0-af3b-134cc9bc8c68",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
