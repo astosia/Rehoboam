@@ -6,7 +6,7 @@ const isSandbox = false;
 
 // Array with absolute file path strings
 const entryFilenames = ["_pkjs_shared_additions.js",
-"/home/astosia/pebble-dev/pebble-sdk-4.5-linux64/Rehoboam/src/pkjs/index.js"];
+"/home/user/git/Rehoboam/src/pkjs/index.js"];
 
 // folder path string
 const outputPath = "build";
@@ -15,13 +15,13 @@ const outputPath = "build";
 const outputFilename = "pebble-js-app.js";
 
 // Array with absolute folder path strings
-const resolveRoots = ["/home/astosia/.pebble-sdk/SDKs/current/sdk-core/pebble/common/include",
-"/home/astosia/.pebble-sdk/SDKs/current/sdk-core/pebble/common/tools/webpack",
-"/home/astosia/.pebble-sdk/SDKs/current/node_modules",
-"/home/astosia/pebble-dev/pebble-sdk-4.5-linux64/Rehoboam/build/js"];
+const resolveRoots = ["/home/user/.pebble-sdk/SDKs/current/sdk-core/pebble/common/include",
+"/home/user/.pebble-sdk/SDKs/current/sdk-core/pebble/common/tools/webpack",
+"/home/user/.pebble-sdk/SDKs/current/node_modules",
+"/home/user/git/Rehoboam/build/js"];
 
 // Object, { alias1: 'path1', ... }
-const resolveAliases = {"app_package.json": "/home/astosia/pebble-dev/pebble-sdk-4.5-linux64/Rehoboam/package.json",
+const resolveAliases = {"app_package.json": "/home/user/git/Rehoboam/package.json",
 "pebble-fctx": "pebble-fctx/dist/js",
 "pebble-clay": "pebble-clay/dist/js",
 "pebble-utf8": "pebble-utf8/dist/js"};
