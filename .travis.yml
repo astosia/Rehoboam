@@ -18,4 +18,4 @@ addons:
     - libssl-dev
     - libffi-dev
 env:
-  - PEBBLE_SDK=pebble-sdk-4.5-linux64 PEBBLE_PATH=daktak/rehoboam
+  - PEBBLE_SDK=pebble-sdk-4.5-linux64 PEBBLE_PATH=astosia/rehoboam
